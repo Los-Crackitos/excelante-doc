@@ -1,0 +1,29 @@
+{
+  "name": "excelante-doc",
+  "version": "1.0.0",
+  "description": "Documentation of Excelante API",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Los-Crackitos/excelante-doc.git"
+  },
+  "keywords": [
+    "documentation",
+    "api",
+    "gitbook",
+    "doc"
+  ],
+  "author": "Jérôme Pogeant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Los-Crackitos/excelante-doc/issues"
+  },
+  "homepage": "https://github.com/Los-Crackitos/excelante-doc#readme",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-page-footer": "^5.4.3",
+    "gitbook-plugin-scripts": "^1.0.2",
+    "gitbook-plugin-search-plus": "^1.0.4-alpha-3",
+    "gitbook-plugin-signature": "^1.5.2"
+  }
+}
