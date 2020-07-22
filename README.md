@@ -1,2 +1,3 @@
-# excelante-doc
+# Documentation Excelante
+
 Documentation of Excelante API
