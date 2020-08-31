@@ -12,7 +12,7 @@ To create an excel file with Excelante, you need to call the API ``` /api/v1/wri
     "orientation": "OrientationLanscape",     // (Optionnal) Is the orientation of layout. (OrientationPortrait || OrientationLanscape) Default is set to OrientationPortrait.
     "items": [{                               // Array of items. An item is an object that can be write into excel file.
       "starting_cell_coordonates": "B3",      // (Optionnal) Represent the begining coordonates of the item.
-      "tables": [{                            // Array of data. Represent all data of an excel table that can be write into file. An object of tables is write by column or by row
+      "table": [{                            // Array of data. Represent all data of an excel table that can be write into file. An object of tables is write by column or by row
         "orientation": "column",              // Represent the mode of writing. (column || row)
         "cells": [{                           // Represent an array of cells to wwrite
           "value": "myValue",                 // Value of the cell
