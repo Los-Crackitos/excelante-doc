@@ -2,8 +2,7 @@
 
 ## Write an excel file
 
-To create an excel file with Excelante, you need to call the API ``` /api/v1/write ``` with POST method and pass the following json scheme to the route. Some fiedls are optionnal, feel free to use it or not.
-
+To create an excel file with Excelante, you need to call the API `/api/v1/write` with POST method and pass the following json scheme to the route. Some fiedls are optionnal, feel free to use it or not.
 
 ```json
 {
@@ -11,7 +10,7 @@ To create an excel file with Excelante, you need to call the API ``` /api/v1/wri
     "name": "Sheet1",                         // Name of the sheet
     "orientation": "OrientationLanscape",     // (Optionnal) Is the orientation of layout. (OrientationPortrait || OrientationLanscape) Default is set to OrientationPortrait.
     "items": [{                               // Array of items. An item is an object that can be write into excel file.
-      "starting_cell_coordonates": "B3",      // (Optionnal) Represent the begining coordonates of the item.
+      "starting_cell_coordinates": "B3",      // (Optionnal) Represent the begining coordonates of the item.
       "table": [{                            // Array of data. Represent all data of an excel table that can be write into file. An object of tables is write by column or by row
         "orientation": "column",              // Represent the mode of writing. (column || row)
         "cells": [{                           // Represent an array of cells to wwrite
@@ -47,7 +46,8 @@ To create an excel file with Excelante, you need to call the API ``` /api/v1/wri
               "hidden": 0,                    // (Optionnal) Cell is hidden (true) or not (false)
               "locked": 0                     // (Optionnal) Cell is locked (true) or not (false)
             }
-          }
+          },
+          "is_formula": true,                 // (Optionnal) Set true if the current cell value is a formula.
         }]
       }],
       "chart": {                              // (Optionnal) Represent a graph item
