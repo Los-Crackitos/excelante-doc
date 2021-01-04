@@ -2,16 +2,16 @@
 
 ## Write an excel file
 
-To create an excel file with Excelante, you need to call the API `/api/v1/write` with POST method and pass the following JSON scheme to the route. Some fields are optionnal, feel free to use it or not.
+To create an excel file with Excelante, you need to call the API `/api/v1/write` with POST method and pass the following json scheme to the route. Some fiedls are optionnal, feel free to use it or not.
 
-```javascript
+```json
 {
   "sheets": [{                                // Array of sheets
     "name": "Sheet1",                         // Name of the sheet
     "orientation": "OrientationLanscape",     // (Optionnal) Is the orientation of layout. (OrientationPortrait || OrientationLanscape) Default is set to OrientationPortrait.
     "items": [{                               // Array of items. An item is an object that can be write into excel file.
-      "starting_cell_coordonates": "B3",      // (Optionnal) Represent the begining coordonates of the item.
-      "tables": [{                            // Array of data. Represent all data of an excel table that can be write into file. An object of tables is write by column or by row
+      "starting_cell_coordinates": "B3",      // (Optionnal) Represent the begining coordonates of the item.
+      "table": [{                            // Array of data. Represent all data of an excel table that can be write into file. An object of tables is write by column or by row
         "orientation": "column",              // Represent the mode of writing. (column || row)
         "cells": [{                           // Represent an array of cells to wwrite
           "value": "myValue",                 // Value of the cell
@@ -21,7 +21,7 @@ To create an excel file with Excelante, you need to call the API `/api/v1/write`
               "color": "#000000",             // Color is the border color.
               "style":1                       // Style is the border format (See border style reference)
             }],
-            "fill": {                         // (Optionnal) Represent cell fill
+            "fill": {                          // (Optionnal) Represent cell fill
               "type": "pattern",              // Type of fill
               "color": ["#87CEFA"],           // Fill color
               "pattern": 1,                   // Fill pattern (See fill style reference)
@@ -39,14 +39,15 @@ To create an excel file with Excelante, you need to call the API `/api/v1/write`
             "alignment": {                    // (Optionnal) Represent cell content aligment
               "horizontal":"center",          // (Optionnal) Represent horizontal alignment into the cell (See alignment style reference)
               "vertical": "top",              // (Optionnal) Represent vertical alignment into the cell (See alignment style reference)
-              "shrink_to_fit": true,          // (Optionnal) Shrink to fit cell text
+              "shrink_to_fit": true,           // (Optionnal) Shrink to fit cell text
               "wrap_text": false              // (Optionnal) Wrap cell text
             },
             "protection": {                   // (Optionnal) Represent cell protection
               "hidden": 0,                    // (Optionnal) Cell is hidden (true) or not (false)
               "locked": 0                     // (Optionnal) Cell is locked (true) or not (false)
             }
-          }
+          },
+          "is_formula": true,                 // (Optionnal) Set true if the current cell value is a formula.
         }]
       }],
       "chart": {                              // (Optionnal) Represent a graph item
@@ -76,7 +77,7 @@ To create an excel file with Excelante, you need to call the API `/api/v1/write`
             "height": 290,                    // Set height. Default 290
             "width": 480                      // Set width. Default 480
         },
-        "plot_area":{                         // Set the position of the chart plot area
+        "plot_area":{                          // Set the position of the chart plot area
             "show_bubble_size": true,         // Specifies the bubble size shall be shown in a data label. Default false.
             "show_cat_name": false,           // Show category name. Default true.
             "show_leader_lines": false,       // Specifies that the category name shall be shown in the data label. Default false.
@@ -92,4 +93,3 @@ To create an excel file with Excelante, you need to call the API `/api/v1/write`
   }]
 }
 ```
-
