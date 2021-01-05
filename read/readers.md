@@ -59,9 +59,9 @@ Example return value:
 If your excel file contains some sheets and you only need to extract one of them, or you need to specify some coordinates for the beginning of reading, you can pass an options parameters that take a json value like that
 
 ```
-{"options" : [{"sheet":"Feuil2", "coordinates":"B2"}, {"sheet":"Feuil4"}]}
+{"options" : [{"sheet_name":"Feuil2", "starting_coordinates":"B2"}, {"sheet_name":"Feuil4"}]}
 ```
 
 ```bash
-curl -F file=@testFiles/input.xlsx options='[{"sheet":"Feuil2", "coordinates":"B2"}, {"sheet":"Feuil4"}]' http://localhost:8000/api/v1/read/columns --output myFile.json
+curl -F file=@testFiles/input.xlsx options='[{"sheet_name":"Feuil2", "starting_coordinates":"B2"}, {"sheet_name":"Feuil4"}]' http://localhost:8000/api/v1/read/columns --output myFile.json
 ```
